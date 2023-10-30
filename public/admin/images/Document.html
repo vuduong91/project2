@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://127.0.0.1:5500/index.html?username=&password= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*flex box css*/
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 350px;
+            height: 250px;
+            background-color: rgb(64, 146, 246);
+            padding: 20px;
+            justify-content: space-between;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .form-control {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-control label {
+            min-width: 100px;
+        }
+        .form-input {
+            border: 1px solid #ccc;
+            padding: 7px 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            outline: none;
+            flex: 1;
+        }
+
+        .btn-submit {
+            width: 120px;
+            height: 35px;
+            padding: 7px 12px;
+            background-color:rgb(109, 192, 248);
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: 0.3s all;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: rgb(17, 123, 237);
+            border: 1px solid #fafd4d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+    <form action="http://127.0.0.1:5500/index.html?username=&amp;password=" name="loginForm" method="get" onsubmit="return validateForm();">
+        <h1>BKACAD SYSTEM</h1>
+        <span id="login_err" style="color:red;"></span>
+        <div class="form-control">
+            <label for="">Username:</label>
+            <input type="text" name="username" value="" class="form-input">
+        </div>
+        <div class="err-control">
+            <span id="username_err" style="color:red;"></span>
+        </div>
+        <div class="form-control">
+            <label for="">Password:</label>
+            <input type="text" name="password" value="" class="form-input">
+        </div>
+        <div class="err-control">
+            <span id="password_err" style="color:red;"></span>
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Submit" class="btn btn-primary btn-submit">
+        </div>
+    </form>
+    <script src="./Document_files/main.js.download"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
