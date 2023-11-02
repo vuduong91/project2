@@ -12,7 +12,7 @@
     <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet">
 
     <!--Icons-->
-    <script src="/MVC/public/admin/js/lumino.glyphs.js"></script>
+   
 
     <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>

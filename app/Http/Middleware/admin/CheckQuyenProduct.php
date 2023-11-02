@@ -17,20 +17,20 @@ class CheckQuyenProduct
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // return $next($request);
-        if(Auth::guard('admin')->check()){
-            if(Auth::guard('admin')->user()->level ==1){
-                return $next($request);
-            } else{
-                if(Session::get('phanquyen')->ql_product == 1){
-                    return $next($request);
-                } else{
-                    abort(403,"Ban khong co quyen truy cap");
-                }
+        return $next($request);
+        // if(Auth::guard('admin')->check()){
+        //     if(Auth::guard('admin')->user()->level ==1){
+        //         return $next($request);
+        //     } else{
+        //         if(Session::get('phanquyen')->ql_product == 1){
+        //             return $next($request);
+        //         } else{
+        //             abort(403,"Ban khong co quyen truy cap");
+        //         }
                 
-            }
-        }
-        abort(403,"Ban khong co quyen truy cap");
+        //     }
+        // }
+        // abort(403,"Ban khong co quyen truy cap");
     
     }
 }
